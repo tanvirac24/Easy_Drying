@@ -1,0 +1,324 @@
+[
+
+    {
+        "model": "service.Service",
+        "pk": 1,
+        "fields": {
+            "name": "T-Shirts",
+            "description": "Standard washing and folding service for all types of t-shirts.",
+            "price_per_piece": "10.00",
+            "max_quantity": 100,
+            "category": 1,
+            "available": true,
+            "created_at": "2025-02-05T02:45:04.629624",
+            "updated_at": "2025-02-08T02:45:04.629624"
+        }
+    },
+    {
+        "model": "service.Service",
+        "pk": 2,
+        "fields": {
+            "name": "Pants",
+            "description": "Washing and light ironing for trousers and jeans.",
+            "price_per_piece": "8.00",
+            "max_quantity": 100,
+            "category": 1,
+            "available": true,
+            "created_at": "2025-04-01T09:00:00Z",
+            "updated_at": "2025-04-01T09:00:00Z"
+        }
+    },
+    {
+        "model": "service.Service",
+        "pk": 3,
+        "fields": {
+            "name": "Formal Shirts",
+            "description": "Washing, professional ironing, and premium packaging for formal shirts.",
+            "price_per_piece": "11.00",
+            "max_quantity": 100,
+            "category": 1,
+            "available": true,
+            "created_at": "2025-02-05T02:45:04.629624",
+            "updated_at": "2025-02-08T02:45:04.629624"
+        }
+    },
+    {
+        "model": "service.Service",
+        "pk": 4,
+        "fields": {
+            "name": "Jeans",
+            "description": "Deep cleaning and drying for denim jeans.",
+            "price_per_piece": "9.00",
+            "max_quantity": 100,
+            "category": 1,
+            "available": true,
+            "created_at": "2025-02-05T02:45:04.629624",
+            "updated_at": "2025-02-08T02:45:04.629624"
+        }
+    },
+    {
+        "model": "service.Service",
+        "pk": 5,
+        "fields": {
+            "name": "Sarees",
+            "description": "Professional dry cleaning with extra care and premium packaging.",
+            "price_per_piece": "13.00",
+            "max_quantity": 100,
+            "category": 1,
+            "available": true,
+            "created_at": "2025-02-05T02:45:04.629624",
+            "updated_at": "2025-02-08T02:45:04.629624"
+        }
+    },
+    {
+        "model": "service.Service",
+        "pk": 6,
+        "fields": {
+            "name": "Bed Sheets",
+            "description": "Washing and folding of bed sheets and pillow covers.",
+            "price_per_piece": "15.00",
+            "max_quantity": 100,
+            "category": 1,
+            "available": true,
+            "created_at": "2025-02-05T02:45:04.629624",
+            "updated_at": "2025-02-08T02:45:04.629624"
+        }
+    },
+    {
+        "model": "service.Service",
+        "pk": 7,
+        "fields": {
+            "name": "Three-Pices",
+            "description": "Washing and folding of Three-Pices.",
+            "price_per_piece": "12.00",
+            "max_quantity": 100,
+            "category": 1,
+            "available": true,
+            "created_at": "2025-02-05T02:45:04.629624",
+            "updated_at": "2025-02-08T02:45:04.629624"
+        }
+    },
+    {
+        "model": "service.Service",
+        "pk": 8,
+        "fields": {
+            "name": "T-Shirts",
+            "description": "Standard washing and folding service for all types of t-shirts.",
+            "price_per_piece": "15.00",
+            "max_quantity": 100,
+            "category": 2,
+            "available": true,
+            "created_at": "2025-02-05T02:45:04.629624",
+            "updated_at": "2025-02-08T02:45:04.629624"
+        }
+    },
+    {
+        "model": "service.Service",
+        "pk": 9,
+        "fields": {
+            "name": "Pants",
+            "description": "Washing and light ironing for trousers and jeans.",
+            "price_per_piece": "13.00",
+            "max_quantity": 100,
+            "category": 2,
+            "available": true,
+            "created_at": "2025-04-01T09:00:00Z",
+            "updated_at": "2025-04-01T09:00:00Z"
+        }
+    },
+    {
+        "model": "service.Service",
+        "pk": 10,
+        "fields": {
+            "name": "Formal Shirts",
+            "description": "Washing, professional ironing, and premium packaging for formal shirts.",
+            "price_per_piece": "16.00",
+            "max_quantity": 100,
+            "category": 2,
+            "available": true,
+            "created_at": "2025-02-05T02:45:04.629624",
+            "updated_at": "2025-02-08T02:45:04.629624"
+        }
+    },
+    {
+        "model": "service.Service",
+        "pk": 11,
+        "fields": {
+            "name": "Jeans",
+            "description": "Deep cleaning and drying for denim jeans.",
+            "price_per_piece": "15.00",
+            "max_quantity": 100,
+            "category": 2,
+            "available": true,
+            "created_at": "2025-02-05T02:45:04.629624",
+            "updated_at": "2025-02-08T02:45:04.629624"
+        }
+    },
+    {
+        "model": "service.Service",
+        "pk": 12,
+        "fields": {
+            "name": "Sarees",
+            "description": "Professional dry cleaning with extra care and premium packaging.",
+            "price_per_piece": "18.00",
+            "max_quantity": 100,
+            "category": 2,
+            "available": true,
+            "created_at": "2025-02-05T02:45:04.629624",
+            "updated_at": "2025-02-08T02:45:04.629624"
+        }
+    },
+    {
+        "model": "service.Service",
+        "pk": 13,
+        "fields": {
+            "name": "Bed Sheets",
+            "description": "Washing and folding of bed sheets and pillow covers.",
+            "price_per_piece": "20.00",
+            "max_quantity": 100,
+            "category": 2,
+            "available": true,
+            "created_at": "2025-02-05T02:45:04.629624",
+            "updated_at": "2025-02-08T02:45:04.629624"
+        }
+    },
+    {
+        "model": "service.Service",
+        "pk": 14,
+        "fields": {
+            "name": "Three-Pices",
+            "description": "Washing and folding of Three-Pices.",
+            "price_per_piece": "17.00",
+            "max_quantity": 100,
+            "category": 2,
+            "available": true,
+            "created_at": "2025-02-05T02:45:04.629624",
+            "updated_at": "2025-02-08T02:45:04.629624"
+        }
+    },
+    {
+        "model": "service.Service",
+        "pk": 15,
+        "fields": {
+            "name": "T-Shirts",
+            "description": "Standard washing and folding service for all types of t-shirts.",
+            "price_per_piece": "20.00",
+            "max_quantity": 100,
+            "category": 3,
+            "available": true,
+            "created_at": "2025-02-05T02:45:04.629624",
+            "updated_at": "2025-02-08T02:45:04.629624"
+        }
+    },
+    {
+        "model": "service.Service",
+        "pk": 16,
+        "fields": {
+            "name": "Pants",
+            "description": "Washing and light ironing for trousers and jeans.",
+            "price_per_piece": "18.00",
+            "max_quantity": 100,
+            "category": 3,
+            "available": true,
+            "created_at": "2025-04-01T09:00:00Z",
+            "updated_at": "2025-04-01T09:00:00Z"
+        }
+    },
+    {
+        "model": "service.Service",
+        "pk": 17,
+        "fields": {
+            "name": "Formal Shirts",
+            "description": "Washing, professional ironing, and premium packaging for formal shirts.",
+            "price_per_piece": "21.00",
+            "max_quantity": 100,
+            "category": 3,
+            "available": true,
+            "created_at": "2025-02-05T02:45:04.629624",
+            "updated_at": "2025-02-08T02:45:04.629624"
+        }
+    },
+    {
+        "model": "service.Service",
+        "pk": 18,
+        "fields": {
+            "name": "Jeans",
+            "description": "Deep cleaning and drying for denim jeans.",
+            "price_per_piece": "19.00",
+            "max_quantity": 100,
+            "category": 3,
+            "available": true,
+            "created_at": "2025-02-05T02:45:04.629624",
+            "updated_at": "2025-02-08T02:45:04.629624"
+        }
+    },
+    {
+        "model": "service.Service",
+        "pk": 19,
+        "fields": {
+            "name": "Sarees",
+            "description": "Professional dry cleaning with extra care and premium packaging.",
+            "price_per_piece": "23.00",
+            "max_quantity": 100,
+            "category": 3,
+            "available": true,
+            "created_at": "2025-02-05T02:45:04.629624",
+            "updated_at": "2025-02-08T02:45:04.629624"
+        }
+    },
+    {
+        "model": "service.Service",
+        "pk": 20,
+        "fields": {
+            "name": "Bed Sheets",
+            "description": "Washing and folding of bed sheets and pillow covers.",
+            "price_per_piece": "25.00",
+            "max_quantity": 100,
+            "category": 3,
+            "available": true,
+            "created_at": "2025-02-05T02:45:04.629624",
+            "updated_at": "2025-02-08T02:45:04.629624"
+        }
+    },
+    {
+        "model": "service.Service",
+        "pk": 21,
+        "fields": {
+            "name": "Three-Pices",
+            "description": "Washing and folding of Three-Pices.",
+            "price_per_piece": "22.00",
+            "max_quantity": 100,
+            "category": 3,
+            "available": true,
+            "created_at": "2025-02-05T02:45:04.629624",
+            "updated_at": "2025-02-08T02:45:04.629624"
+        }
+    },
+{
+        "model": "service.Category",
+        "pk": 1,
+        "fields": {
+            "name": "Silver",
+            "description": "Only Washing"
+           
+        }
+    },
+    {
+        "model": "service.Category",
+        "pk": 2,
+        "fields": {
+            "name": "Gold",
+            "description": "Specialized Washing high-value items + Ironing"
+            
+        }
+    },
+    {
+        "model": "service.Category",
+        "pk": 3,
+        "fields": {
+            "name": "Platinum",
+            "description": "Specialized Washing high-value items + Ironing + Fast Delivery"
+           
+        }
+    }
+]
