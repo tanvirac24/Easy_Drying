@@ -4,7 +4,7 @@ from django.core.validators import MinValueValidator ,MaxValueValidator
 from service.validators import validate_file_size
 # Create your models here.
 from django.db import models
-
+from cloudinary.models import CloudinaryField
 class Category(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True, null=True)
@@ -30,7 +30,8 @@ class Service(models.Model):
 
 class ServiceImage(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='images')
-    image = models.ImageField(upload_to="services/", validators=[validate_file_size],blank=True,null=True)
+    image = CloudinaryField('image')
+    # image = models.ImageField(upload_to="services/", validators=[validate_file_size],blank=True,null=True)
     # file = models.FileField(upload_to="Service/files", validators=FileExtensionValidator(['pdf']))
 
 class Review(models.Model):

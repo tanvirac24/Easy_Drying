@@ -24,6 +24,7 @@ class UserCreateSerializer(BaseUserCreateSerializer):
 
 
 class UserSerializer(BaseUserSerializer):
+    prof_image=serializers.ImageField()
     class Meta(BaseUserSerializer.Meta):
         ref_name='CustomUser'
         fields = ['id', 'email', 'first_name',

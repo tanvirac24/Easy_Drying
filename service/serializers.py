@@ -25,6 +25,7 @@ class ReviewSerializer(serializers.ModelSerializer):
         return review
 
 class ServiceImageSerializer(serializers.ModelSerializer):
+    image=serializers.ImageField()
     class Meta:
         model = ServiceImage
         fields = ['id', 'image']
