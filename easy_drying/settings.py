@@ -78,7 +78,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'easy_drying.wsgi.application'
+WSGI_APPLICATION = 'easy_drying.wsgi.app'
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173'
 ]
