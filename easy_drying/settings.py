@@ -16,9 +16,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-u=uf8vl3w0b)jtm$^t@@iu(b5bdgr_)52o18g0y1#5^kf29d#z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [".vercel.app","127.0.0.1"]
+ALLOWED_HOSTS = [ ]
+# ALLOWED_HOSTS = [".vercel.app","127.0.0.1"]
 AUTH_USER_MODEL ='users.User'
 INTERNAL_IPS = [
     # ...
@@ -29,13 +30,14 @@ INTERNAL_IPS = [
 # Application definition
 
 INSTALLED_APPS = [
-    "whitenoise.runserver_nostatic",
+    # "whitenoise.runserver_nostatic",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "corsheaders",
     'drf_yasg',
     'django_filters',
     'djoser',
@@ -48,9 +50,10 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "debug_toolbar.middleware.DebugToolbarMiddleware",
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    # "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -76,43 +79,46 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'easy_drying.wsgi.app'
+WSGI_APPLICATION = 'easy_drying.wsgi.application'
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5173'
+]
 
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 #configaration for cloudinary----------
-cloudinary.config( 
-    cloud_name = config('cloudinary_cloud_name'), 
-    api_key = config('cloudinary_api_key'), 
-    api_secret = config('cloudinary_api_secret'), # Click 'View API Keys' above to copy your API secret
-    secure=True
-)
+# cloudinary.config( 
+#     cloud_name = config('cloudinary_cloud_name'), 
+#     api_key = config('cloudinary_api_key'), 
+#     api_secret = config('cloudinary_api_secret'), # Click 'View API Keys' above to copy your API secret
+#     secure=True
+# )
 
 #Media Storage----------
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 
-DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': config('dbname'),
-            'USER': config('user'),
-            'PASSWORD': config('password'),
-            'HOST': config('host'),
-            'PORT': config('port'),
-        }
-    }
+# DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': config('dbname'),
+#             'USER': config('user'),
+#             'PASSWORD': config('password'),
+#             'HOST': config('host'),
+#             'PORT': config('port'),
+#         }
+#     }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -133,7 +139,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
+# STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
@@ -162,6 +168,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
+
     'COERCE_DECIMAL_TO_STRING':False,
     'DEFAULT_AUTHENTICATION_CLASSES': (
     'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -169,8 +176,8 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ],
-    'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 4,
+    # 'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.PageNumberPagination',
+    # 'PAGE_SIZE': 4, # changed from "4"
      
     }
 
@@ -180,9 +187,11 @@ SIMPLE_JWT = {
    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
 }
 DJOSER = {
-    'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
-    'ACTIVATION_URL': 'activate/{uid}/{token}',
-    'SEND_ACTIVATION_EMAIL': True,
+    'EMAIL_FRONTEND_PROTOCOL':'http://localhost:5173/login',
+    'EMAIL_FRONTEND_SITE_NAME':'easy_drying',
+    # 'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
+    # 'ACTIVATION_URL': 'activate/{uid}/{token}',
+    # 'SEND_ACTIVATION_EMAIL': True,
     'SERIALIZERS':{
        'user_create': 'users.serializers.UserCreateSerializer', 
        'current_user': 'users.serializers.UserSerializer', 
@@ -201,9 +210,9 @@ SWAGGER_SETTINGS = {
    }
 }
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = config('EMAIL_HOST')
-EMAIL_USE_TLS =config('EMAIL_USE_TLS',cast=bool)
-EMAIL_PORT =config('EMAIL_PORT')
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD =config('EMAIL_HOST_PASSWORD')
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = config('EMAIL_HOST')
+# EMAIL_USE_TLS =config('EMAIL_USE_TLS',cast=bool)
+# EMAIL_PORT =config('EMAIL_PORT')
+# EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+# EMAIL_HOST_PASSWORD =config('EMAIL_HOST_PASSWORD')

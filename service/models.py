@@ -30,8 +30,8 @@ class Service(models.Model):
 
 class ServiceImage(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='images')
-    image = CloudinaryField('image')
-    # image = models.ImageField(upload_to="services/", validators=[validate_file_size],blank=True,null=True)
+    # image = CloudinaryField('image')
+    image = models.ImageField(upload_to="services/", validators=[validate_file_size],blank=True,null=True)
     # file = models.FileField(upload_to="Service/files", validators=FileExtensionValidator(['pdf']))
 
 class Review(models.Model):

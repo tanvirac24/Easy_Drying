@@ -10,8 +10,8 @@ class User(AbstractUser):
     address=models.TextField(blank=True, null=True)
     phone_number=models.CharField()
     bio=models.TextField(blank=True,null=True)
-    prof_image = CloudinaryField('image')
-    # prof_image = models.ImageField(upload_to="Profile/prof_images/", validators=[validate_file_size],blank=True,null=True)
+    # prof_image = CloudinaryField('image')
+    prof_image = models.ImageField(upload_to="Profile/prof_images/", validators=[validate_file_size],blank=True,null=True)
 
     USERNAME_FIELD= 'email' #use email instead of username
     REQUIRED_FIELDS = []

@@ -10,13 +10,14 @@ from rest_framework.viewsets import ModelViewSet
 from django_filters.rest_framework import DjangoFilterBackend
 from service.filters import ServiceFilter
 from rest_framework.filters import SearchFilter,OrderingFilter
-from rest_framework.pagination import PageNumberPagination
+# from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAdminUser,AllowAny
 from api.permissions import IsAdminOrReadOnly,FullDjangoModelPermission
 from rest_framework.permissions import DjangoModelPermissions
 from service.permissions import IsReviewAuthorReadonly
 from drf_yasg.utils import swagger_auto_schema
 from django.db.models import Avg
+from service.pagination import DefaultPagination
 # Create your views here.
 
 class ServiceViewSet(ModelViewSet):
@@ -33,7 +34,7 @@ class ServiceViewSet(ModelViewSet):
     filter_backends=[DjangoFilterBackend,SearchFilter,OrderingFilter]
     # filterset_fields= ['category_id']
     filterset_class = ServiceFilter
-    # pagination_class= PageNumberPagination
+    pagination_class= DefaultPagination
     search_fields=['name','category__name','description']
     ordering_fields=['price_per_piece','updated_at','average_rating']
     permission_classes=[FullDjangoModelPermission]
